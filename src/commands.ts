@@ -2,6 +2,7 @@ import { commandExit } from "./command_exit.js";
 import { commandHelp } from "./command_help.js";
 import type { CLICommand } from "./state.js";
 import { commandMapForward, commandMapBack } from "./command_map.js";
+import { commandExplore } from "./command_explore.js";
 
 
 export function getCommands(): Record<string, CLICommand> {
@@ -28,6 +29,12 @@ export function getCommands(): Record<string, CLICommand> {
       name: "mapb",
       description: "Get the previous page of locations",
       callback: commandMapBack,
+    },
+
+    explore: {
+      name: "explore <location_name>",
+      description: "Explore a location",
+      callback: commandExplore,
     },
   };
 }
